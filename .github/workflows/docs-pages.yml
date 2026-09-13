@@ -1,8 +1,19 @@
 name: Documentation Pages
 
 on:
+  pull_request:
+    paths:
+      - "docs/**"
+      - "mkdocs.yml"
+      - "requirements-docs.txt"
+      - ".github/workflows/docs-pages.yml"
   push:
     branches: [main]
+    paths:
+      - "docs/**"
+      - "mkdocs.yml"
+      - "requirements-docs.txt"
+      - ".github/workflows/docs-pages.yml"
   workflow_dispatch:
 
 permissions:
@@ -18,11 +29,13 @@ jobs:
           python-version: "3.x"
       - run: pip install -r requirements-docs.txt
       - run: mkdocs build --strict
-      - uses: actions/upload-pages-artifact@v4
+      - if: github.event_name != 'pull_request'
+        uses: actions/upload-pages-artifact@v4
         with:
           path: site
 
   deploy:
+    if: github.event_name != 'pull_request'
     needs: build
     runs-on: ubuntu-latest
     permissions:
