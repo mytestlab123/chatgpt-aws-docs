@@ -1,42 +1,31 @@
 # Environment
 
-Status: NOT_READY
-
-Record project-specific runtime and dependency truth here. Keep machine-specific facts in the active `~/.agent/HOST.md` profile when available instead of duplicating host configuration in every repository.
+Status: READY
 
 ## Runtime
 
-- Primary host/profile: `~/.agent/HOST.md` when available
-- Working directory: `<repo path>`
-- Runtime: `<local | container | AWS | mixed>`
+- Repository: `mytestlab123/chatgpt-aws-docs`
+- Runtime: GitHub Actions + GitHub Pages
+- Local runtime: optional Python environment for MkDocs preview/build
 
 ## Development Tools
 
-List only tools this project actually depends on, for example:
+- Python: GitHub Actions `3.x`
+- Documentation: Material for MkDocs
+- Build command: `mkdocs build --strict`
+- Docker: not required
+- Terraform: not required for this public Pages repository
 
-- Python: `<version / not required>`
-- Node.js / npm: `<version / not required>`
-- Docker/Podman: `<required / not required>`
-- Terraform/Terragrunt: `<required / not required>`
-- Nextflow: `<required / not required>`
+## Hosting
 
-## Cloud
+- Provider: GitHub Pages
+- Deployment source: GitHub Actions
+- Public URL: `https://mytestlab123.github.io/chatgpt-aws-docs/`
 
-- Provider: `<AWS / none / other>`
-- AWS profile: `<profile or N/A>`
-- Region: `<region or N/A>`
-- Account/environment alias: `<personal lab / dev / nonprod / prod / N/A>`
+## Related Source
 
-Never infer execution authority from an AWS profile name. Authority comes from `SPEC.md` and the active Issue/instruction.
-
-## External Dependencies
-
-- `<service, MCP, model platform, database, API, or N/A>`
+Reusable learning content may originate from the private `mytestlab123/chatgpt-aws` implementation repository, but only reviewed/allowlisted content may be published here.
 
 ## Credentials And Secrets
 
-Use approved local, cloud, or secret-management mechanisms. Never commit credentials, tokens, private keys, or raw secrets.
-
-## Readiness
-
-Set `Status` to `READY` only when the dependencies needed for the current milestone are known and usable. Use `PARTIAL` when missing dependencies do not block the approved work.
+No AWS credentials are required for the GitHub Pages deployment. Never commit secrets, tokens, private keys, credentials, or authentication state.

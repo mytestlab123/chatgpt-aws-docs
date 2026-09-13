@@ -1,32 +1,32 @@
 # Context
 
-Status: NOT_INITIALIZED
+Status: READY
 
 ## Project Identity
 
-- Project: `<project name>`
-- Primary Repository: `<owner/repo>`
-- Primary Directory: `<optional local path>`
-- Authorized Related Repositories: `<optional list>`
-
-Optional session metadata may be recorded when useful, but it is coordination context only:
-
-- Codex Thread: `<optional>`
-- Codex Session: `<optional UUID>`
-- ChatGPT Project/Chat: `<optional>`
-- ChatGPT Session/URL: `<optional>`
+- Project: `chatgpt-aws-docs`
+- Primary Repository: `mytestlab123/chatgpt-aws-docs`
+- Related source repository: private `mytestlab123/chatgpt-aws`
+- Purpose: public, sanitized learning documentation only
+- Public site: `https://mytestlab123.github.io/chatgpt-aws-docs/`
 
 ## Current Truth
 
-- Repository created from `repo-starter`.
-- Initialization interview not yet completed.
+- Repository is public.
+- Material for MkDocs builds successfully with `mkdocs build --strict`.
+- GitHub Pages is configured to deploy through GitHub Actions.
+- Initial Pages deployment succeeded after Pages was enabled.
+- The private implementation repository remains separate and is not mirrored wholesale.
 
 ## Active Work
 
-- Issue: `<none>`
-- PR: `<none>`
-- Current milestone: `<none>`
+- Issue: `#1` bootstrap/closeout
+- Current milestone: complete the public documentation publishing surface and record the verified deployment.
+
+## Publishing Rule
+
+Publish only reviewed, reusable learning content. Never publish secrets, credentials, authentication state, private-only account identifiers, or raw implementation evidence that is not intended for public sharing.
 
 ## Next Action
 
-- Run the short `INIT.md` interview, then update project identity, `SPEC.md`, `ENV.md`, README purpose, and the first useful milestone.
+Keep the public documentation allowlist explicit. Future automation from the private source repository should use a narrowly scoped identity that can write only to this documentation repository.

@@ -2,22 +2,20 @@
 
 Shareable learning notes for AWS, MCP-assisted operations, GitHub-based delivery, and documentation hosting.
 
-## Site
+## Live site
 
-The repository is prepared for Material for MkDocs and GitHub Pages.
+**https://mytestlab123.github.io/chatgpt-aws-docs/**
 
-Expected Pages address after Pages is enabled:
-
-`https://mytestlab123.github.io/chatgpt-aws-docs/`
+The site is built with Material for MkDocs and deployed by GitHub Actions to GitHub Pages.
 
 ## What belongs here
 
-Only selected learning material intended for sharing. The implementation lab remains separate.
+Only selected learning material intended for public sharing. The implementation lab remains separate in the private `mytestlab123/chatgpt-aws` repository.
 
 Current guides:
 
 - AWS control paths: fast live work vs deterministic delivery
-- Static documentation hosting: GitHub Pages, AWS S3 + CloudFront, and Cloudflare Pages
+- Static documentation hosting: GitHub Pages, AWS S3 + CloudFront, and private sharing options
 - Cloudflare Pages + Access experiment notes
 - Two-repository documentation publishing model
 
@@ -31,6 +29,6 @@ mkdocs serve
 
 ## Publishing
 
-`.github/workflows/docs-pages.yml` builds the site and deploys it through GitHub Pages after Pages is configured to use GitHub Actions.
+`.github/workflows/docs-pages.yml` validates documentation on pull requests and deploys `main` through GitHub Pages.
 
-See `docs/PUBLISHING_MODEL.md` for the source-repository separation model.
+See `docs/PUBLISHING_MODEL.md` for the source-repository separation model and the repository-creation lesson.

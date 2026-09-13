@@ -1,61 +1,45 @@
 # Specification
 
-Status: DRAFT
-Context: `<PERSONAL | WORK>`
-Environment: `<LOCAL | LAB | DEV | NONPROD | PROD>`
+Status: ACTIVE
+Context: PERSONAL
+Environment: PUBLIC-DOCS
 
 ## Objective
 
-Describe the problem and intended result.
+Publish sanitized, reusable AWS/MCP/GitHub learning material from a separate private implementation repository without exposing private implementation details.
 
 ## Outcome
 
-Describe the usable milestone/release package to deliver.
+A public Material for MkDocs site deployed through GitHub Actions and GitHub Pages at:
+
+`https://mytestlab123.github.io/chatgpt-aws-docs/`
 
 ## Authorized
 
-List the actions that may proceed without repeated approval while this SPEC is ACTIVE and the owning Issue/instruction remains in scope.
-
-For `PERSONAL` + `LAB`/`DEV`, explicitly authorized deterministic work may include repo-owned implementation, deployment, cloud resource creation/mutation, validation, reset, and cleanup without asking resource-by-resource.
-
-For `WORK` and especially `PROD`, grant only the bounded authority actually intended. Read-only investigation may be standing authority when explicitly stated; mutation requires proportionate approval in this SPEC or the current user instruction.
-
-Repository visibility is not an authority signal. Private does not mean personal; public does not mean unrestricted.
+- Maintain documentation, MkDocs configuration, and Pages workflows in this repository.
+- Publish only content intentionally reviewed for public sharing.
+- Create issues/PRs and merge routine documentation changes when validation passes.
 
 ## MUST
 
-- List required behavior and acceptance-critical invariants.
+- Keep the private implementation repository separate.
+- Use an explicit allowlist for any future automated publication.
+- Run `mkdocs build --strict` before publication.
+- Keep the public site reproducible from this repository.
 
 ## MUST NOT
 
-- List hard scope, security, data, publication, production, destructive, or cost boundaries.
-
-## Phases / Milestones
-
-Group related work into a cohesive useful package, normally several tightly coupled tasks or 2-3 phases sharing one outcome and trust boundary.
-
-- Phase 1: `<outcome>`
-- Phase 2: `<outcome>`
-- Phase 3: `<outcome>`
-
-Do not stop between routine approved phases merely to request permission again.
+- Mirror the private source repository wholesale.
+- Publish secrets, credentials, tokens, authentication state, private account identifiers, or sensitive raw evidence.
+- Give the public repository credentials that can broadly read the private source repository.
 
 ## Verification
 
-State the smallest meaningful proof: focused tests/checks, runtime/provider readback, user-path validation, and cleanup/retention state when applicable.
-
-## Stop Gates
-
-Stop and ask only when required by a real boundary, for example:
-
-- target repository/account/environment does not match the approved scope;
-- work would enter PROD or another higher-risk environment without authority;
-- destructive/non-recoverable data loss, credential/secret mutation, public exposure, or material cost is not explicitly approved;
-- implementation would materially widen architecture, security/trust boundary, or external integration beyond the milestone;
-- required validation fails or current state is ambiguous/unsafe.
-
-Technical failure remains a blocker even when mutation is otherwise authorized.
+- `mkdocs build --strict` passes.
+- GitHub Pages artifact upload passes.
+- GitHub Pages deployment reports success.
+- Deployment environment URL is `https://mytestlab123.github.io/chatgpt-aws-docs/`.
 
 ## Acceptance
 
-List concise conditions that make the whole milestone reviewable and complete.
+The public documentation repository is initialized, the site deploys successfully, and the two-repository publishing model is documented.
