@@ -1,26 +1,36 @@
-# <Project Name>
+# ChatGPT AWS Docs
 
-One sentence explaining the problem this repository solves.
+Shareable learning notes for AWS, MCP-assisted operations, GitHub-based delivery, and documentation hosting.
 
-## Start Here
+## Site
 
-1. Read `AGENTS.md` for repository rules and read order.
-2. Complete `INIT.md` once when the repository is first created from this template.
-3. Read `CONTEXT.md` for project identity, current truth, active Issue/PR, and next action.
-4. Read `CHATGPT.md` for ChatGPT-Codex collaboration, handoffs, `go` semantics, and repository-mismatch protection.
-5. Read `ENV.md` when runtime, cloud, host, profile, or tool dependencies matter.
-6. Read `SPEC.md` before implementation, mutation, deployment, cleanup, or trusted-contract changes.
+The repository is prepared for Material for MkDocs and GitHub Pages.
 
-## Template Model
+Expected Pages address after Pages is enabled:
 
-Keep root contracts short and separate by responsibility:
+`https://mytestlab123.github.io/chatgpt-aws-docs/`
 
-- `AGENTS.md` — router and core repository rules
-- `CHATGPT.md` — ChatGPT ↔ Codex collaboration
-- `CONTEXT.md` — current project/repository state
-- `SPEC.md` — execution authority and milestone contract
-- `INIT.md` — one-time short initialization interview
-- `ENV.md` — project runtime/tool/cloud dependencies
-- `ROADMAP.md` — useful future milestones, not current authority
+## What belongs here
 
-Prefer one cohesive, reviewable PR containing related phases/tasks over micro-PRs. Reusable cross-project guidance belongs in [Agent OS](https://github.com/amitkarpe/agent-os); machine-specific facts belong in the active `~/.agent/HOST.md` when available.
+Only selected learning material intended for sharing. The implementation lab remains separate.
+
+Current guides:
+
+- AWS control paths: fast live work vs deterministic delivery
+- Static documentation hosting: GitHub Pages, AWS S3 + CloudFront, and Cloudflare Pages
+- Cloudflare Pages + Access experiment notes
+- Two-repository documentation publishing model
+
+## Local build
+
+```bash
+pip install -r requirements-docs.txt
+mkdocs build --strict
+mkdocs serve
+```
+
+## Publishing
+
+`.github/workflows/docs-pages.yml` builds the site and deploys it through GitHub Pages after Pages is configured to use GitHub Actions.
+
+See `docs/PUBLISHING_MODEL.md` for the source-repository separation model.
