@@ -1,0 +1,4 @@
+site_name: Cloud Engineering Learning Docs
+
+theme:
+  name: material
