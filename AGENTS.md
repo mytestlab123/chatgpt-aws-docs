@@ -1,27 +1,34 @@
 # AGENTS.md
 
-## Read Order
+## Repository Role
+
+This repository is a **legacy rollback/historical documentation path** for ChatGPT AWS learning material. The preferred active documentation architecture now lives with the public source repository `mytestlab123/chatgpt-aws` and its same-repo GitHub Pages site.
+
+Preserve this repository and its published site until a separate archive/deletion decision. Do not treat legacy status as cleanup authority.
+
+## Bootstrap / Recovery Order
+
+Use this order for cold start, recovery, materially changed governing context, or stale/incomplete/contradictory state. For warm continuation, use the named Issue/PR, latest relevant authorized delta, and current HEAD; do not reread the full context set on every handoff.
 
 1. `AGENTS.md`
 2. `CONTEXT.md`
 3. `INIT.md` only when repository initialization is incomplete
-4. `CHATGPT.md` for ChatGPT/Codex/GitHub collaboration
-5. `ENV.md` when runtime, cloud, host, or tool facts matter
-6. `SPEC.md` before implementation, mutation, deployment, cleanup, or trusted-contract changes
+4. `CHATGPT.md` when ChatGPT/Codex/GitHub collaboration or connector safety matters
+5. `ENV.md` when runtime, hosting, or tool facts matter
+6. `SPEC.md` before publication-model changes, deployment, cleanup, or trusted-contract changes
 
 ## Rules
 
 - Follow KISS: optimize for one useful outcome, not the smallest possible task.
 - Preserve existing work. Do not revert unrelated changes or use destructive Git actions without authority.
-- Keep durable code, decisions, and reports in Git. Never commit secrets, credentials, authentication state, or copied repositories.
-- Update `CONTEXT.md` when repository identity, current truth, active Issue/PR, or next action materially changes.
-- `SPEC.md` is the repository execution contract. Proceed inside an ACTIVE approved scope and stop on a genuine safety, scope, authorization, repository-identity, access, or validation failure.
-- Prefer one cohesive PR with related phases/tasks over micro-PRs. Small isolated fixes may remain small.
-- When the current objective is known, short continuation such as `go`, `g`, `.`, `Y`, or `yes` means execute/continue it within existing authority unless Amit explicitly selected plan/review/discussion mode.
+- Keep durable code, decisions, and reports in Git. Never commit secrets, credentials, authentication state, or copied private implementation evidence.
+- Keep `CONTEXT.md` current-only and update it when repository role, active Issue/PR, blocker, or next action materially changes.
+- Preserve this repository's current Pages site/content as rollback/history unless a separately authorized migration/archive milestone changes that role.
+- Do not create new duplicated public content here when the same learning belongs in the preferred `mytestlab123/chatgpt-aws` documentation path.
+- `SPEC.md` remains the repository execution contract for any future change.
+- Prefer one cohesive PR with related changes over micro-PRs.
 - Before cross-repo mutation, apply the repository-binding guard in `CHATGPT.md`.
 
 ## Global Guidance
 
-When available, use `~/.agent/CORE.md` as the shared machine-wide operating contract and `~/.agent/HOST.md` for active host facts. Tool homes such as `~/.codex/` remain tool-specific adapters/runtime state.
-
-Agent OS is reusable guidance, never automatic project authority. Current user instruction plus this repository's `AGENTS.md`, `SPEC.md`, owning Issue/PR, and project context take precedence.
+Agent OS is reusable guidance, never automatic project authority. Current user instruction plus this repository's own rules, owning Issue/PR, and current context take precedence.
